@@ -38,6 +38,13 @@ function ST.InitAddonMenu()
 	}
 	optionData[#optionData+1] = {
 		type = "checkbox",
+		name = "|t35:35:/esoui/art/icons/death_recap_cold_aoe2.dds|t Surging Waters (Dreadsail Reef)",
+		getFunc = function() return ST.savedVariables.general_surgingWaters end,
+		setFunc = function(value) ST.savedVariables.general_surgingWaters = value end,
+		tooltip = "Adds a confirmation you have to accept if you want to go up.",
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
 		name = "|t35:35:/esoui/art/icons/collectible_memento_pearlsummon.dds|t Cloudrest Portal (Dont Portal Twice)",
 		getFunc = function() return ST.savedVariables.general_cloudrestPortalDebuff end,
 		setFunc = function(value) ST.savedVariables.general_cloudrestPortalDebuff = value end,
