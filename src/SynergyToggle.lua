@@ -89,6 +89,10 @@ ST.outbreakCooldown = false
 ST.PURGESOUL = "/esoui/art/icons/achievement_murkmire_kill_voriplasm.dds"
 ST.blobBlock = false
 
+-- dsr
+ST.SURGINGWATERS = "/esoui/art/icons/death_recap_cold_aoe2.dds"
+ST.surgingWatersCooldown = false
+
 
 function ST.InitSavedVariables()
 	local defaults = {
@@ -98,6 +102,7 @@ function ST.InitSavedVariables()
 		general_conjurersPortal = false,
 		general_cloudrestPortalDebuff = true,
 		general_destructiveOutbreak = true,
+		general_surgingWaters = true,
 		general_arenaSigils = false,
 		dd_conduit = false,
 		dd_harvest = false,
@@ -379,6 +384,25 @@ function ST.BlockSynergies()
 					ST.ShowDialog("DestructiveOutbreak",
 						"|t35:35:/esoui/art/icons/ability_sorcerer_065.dds|t Destructive Outbreak",
 						"Are you sure you want to break free?\nPlease look after your mates.",
+						function()
+							SYNERGY:OnSynergyAbilityChanged()
+						end,
+						function()
+							SYNERGY:OnSynergyAbilityChanged()
+						end)
+					SHARED_INFORMATION_AREA:SetHidden(SYNERGY, true)
+					return true
+				end
+			end
+			if ST.savedVariables.general_surgingWaters and icon == ST.SURGINGWATERS then
+				if not ST.surgingWatersCooldown then
+					ST.surgingWatersCooldown = true
+					zo_callLater(function()
+						ST.surgingWatersCooldown = false
+					end, 10000)
+					ST.ShowDialog("Surging Waters",
+						"|t35:35:" .. ST.SURGINGWATERS .. "|t Surging Waters",
+						"Are you sure you want to go up? You won't be able to come back.",
 						function()
 							SYNERGY:OnSynergyAbilityChanged()
 						end,
