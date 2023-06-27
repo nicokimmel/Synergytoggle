@@ -120,6 +120,15 @@ function ST.InitAddonMenu()
 	}
 	optionData[#optionData+1] = {
 		type = "checkbox",
+		name = "|t35:35:/esoui/art/icons/ability_necromancer_010_b.dds|t Agony",
+		getFunc = function() return ST.savedVariables.dd_agony end,
+		setFunc = function(value)
+					ST.savedVariables.dd_agony = value
+					ST.synergies["/esoui/art/icons/ability_necromancer_010_b.dds"] = value
+				  end,
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
 		name = "|t35:35:/esoui/art/icons/ability_templar_sun_strike.dds|t Blessed Shards",
 		getFunc = function() return ST.savedVariables.dd_shards end,
 		setFunc = function(value)
@@ -185,6 +194,14 @@ function ST.InitAddonMenu()
 		min = 0,
 		max = 100,
 		default = 20,
+		width = "half",
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
+		name = "Martial Knowledge Mode",
+		getFunc = function() return ST.savedVariables.dd_martialknowledgemode end,
+		setFunc = function(value) ST.savedVariables.dd_martialknowledgemode = value end,
+		tooltip = "Disables orbs and templar shards while having more than 30% stamina.",
 		width = "half",
 	}
 	optionData[#optionData+1] = {

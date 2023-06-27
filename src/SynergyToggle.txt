@@ -1,8 +1,8 @@
 ## Title: Synergy Toggle
-## Author: ownedbynico
-## Version: 1.10.0
+## Author: ownedbynico, helixanon
+## Version: 1.11.0
 ## Description: A collection of smart synergy options.
-## APIVersion: 101034
+## APIVersion: 101037 101038
 ## DependsOn: LibAddonMenu-2.0
 ## SavedVariables: STSV
 

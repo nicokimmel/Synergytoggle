@@ -2,7 +2,7 @@ SynergyToggle = SynergyToggle or {}
 local ST = SynergyToggle
 
 ST.name = "SynergyToggle"
-ST.version = "1.10.0"
+ST.version = "1.11.0"
 
 ST.synergies = {}
 
@@ -55,6 +55,7 @@ ST.SETS = {
 	["PEARLS"] = "|H1:item:171437:364:50:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h",
 	["MOONDANCER"] = "|H1:item:73009:364:50:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h",
 	["CORALRIPTIDE"] = "|H1:item:186547:364:50:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h",
+	["MK"] = "|H1:item:95452:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h"
 }
 
 -- alkosh mode
@@ -78,8 +79,9 @@ ST.hasMajorBerserk = false
 ST.bahseiAvailable = 0
 ST.pearlsAvailable = 0
 
--- coral riptide
+-- coral riptide and mk mode
 ST.coralriptideAvailable = 0
+ST.mkavailable = 0
 
 -- hrc hm
 ST.DESTRUCTIVEOUTBREAK = "/esoui/art/icons/ability_sorcerer_065.dds"
@@ -102,11 +104,12 @@ function ST.InitSavedVariables()
 		general_conjurersPortal = false,
 		general_cloudrestPortalDebuff = true,
 		general_destructiveOutbreak = true,
-		general_surgingWaters = true,
+		general_surgingWaters = false,
 		general_arenaSigils = false,
 		dd_conduit = false,
 		dd_harvest = false,
 		dd_grave = false,
+		dd_agony = false,
 		dd_shards = false,
 		dd_ritual = false,
 		dd_ladythorn = false,
@@ -115,6 +118,7 @@ function ST.InitSavedVariables()
 		dd_kinrasMode = false,
 		dd_lokkestiizMode = false,
 		dd_moondancerMode = false,
+		dd_martialknowledgemode = false,
 		dd_coralriptideMode = false,
 		dd_coralriptideMode_stamina = 30,
 		tank_atronarch = false,
@@ -219,6 +223,7 @@ function ST.OnWeaponSwap(_, didChange, _, _)
 		ST.pearlsAvailable = ST.CheckSet(ST.SETS.PEARLS)
 		ST.moondancerAvailable = ST.CheckSet(ST.SETS.MOONDANCER)
 		ST.coralriptideAvailable = ST.CheckSet(ST.SETS.CORALRIPTIDE)
+		ST.mkavailable = ST.CheckSet(ST.SETS.MK)
 		SYNERGY:OnSynergyAbilityChanged()
 	end
 end
@@ -331,6 +336,7 @@ function ST.InitSynergies()
 	ST.synergies["/esoui/art/icons/ability_sorcerer_lightning_splash.dds"] = settings.dd_conduit
 	ST.synergies["/esoui/art/icons/ability_warden_007.dds"] = settings.dd_harvest
 	ST.synergies["/esoui/art/icons/ability_necromancer_004.dds"] = settings.dd_grave
+	ST.synergies["/esoui/art/icons/ability_necromancer_010_b.dds"] = settings.dd_agony
 	ST.synergies["/esoui/art/icons/ability_templar_sun_strike.dds"] = settings.dd_shards
 	ST.synergies["/esoui/art/icons/ability_templar_cleansing_ritual.dds"] = settings.dd_ritual
 	ST.synergies["/esoui/art/icons/ability_u23_bloodball_chokeonit.dds"] = settings.dd_ladythorn
@@ -425,6 +431,15 @@ function ST.BlockSynergies()
 			if not ST.HasLowStamina(ST.savedVariables.dd_coralriptideMode_stamina)
 				and ST.savedVariables.dd_coralriptideMode
 				and ST.coralriptideAvailable >= 5 then
+				
+				if ST.RESOURCESYNERGIES[icon] then
+					SHARED_INFORMATION_AREA:SetHidden(SYNERGY, true)
+					return true
+				end
+			end
+			if not ST.HasLowStamina(30)
+				and ST.savedVariables.dd_martialknowledgemode
+				and ST.mkavailable >= 5 then
 				
 				if ST.RESOURCESYNERGIES[icon] then
 					SHARED_INFORMATION_AREA:SetHidden(SYNERGY, true)
