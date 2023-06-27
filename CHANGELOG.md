@@ -1,4 +1,4 @@
-27.06.2022
+27.06.2023
 - New maintainer: helixanon
 - Added Martial Knowledge mode
 - Added blocking of Pure Agony synergy
