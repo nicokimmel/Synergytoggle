@@ -180,6 +180,13 @@ function ST.InitAddonMenu()
 	}
 	optionData[#optionData+1] = {
 		type = "checkbox",
+		name = "Martial Knowledge Mode",
+		getFunc = function() return ST.savedVariables.dd_martialknowledgemode end,
+		setFunc = function(value) ST.savedVariables.dd_martialknowledgemode = value end,
+		tooltip = "Disables orbs and templar shards while having more than 30% stamina.",
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
 		name = "Bahsei's / Pearls Mode",
 		getFunc = function() return ST.savedVariables.dd_bahseisMode end,
 		setFunc = function(value) ST.savedVariables.dd_bahseisMode = value end,
@@ -194,14 +201,6 @@ function ST.InitAddonMenu()
 		min = 0,
 		max = 100,
 		default = 20,
-		width = "half",
-	}
-	optionData[#optionData+1] = {
-		type = "checkbox",
-		name = "Martial Knowledge Mode",
-		getFunc = function() return ST.savedVariables.dd_martialknowledgemode end,
-		setFunc = function(value) ST.savedVariables.dd_martialknowledgemode = value end,
-		tooltip = "Disables orbs and templar shards while having more than 30% stamina.",
 		width = "half",
 	}
 	optionData[#optionData+1] = {
@@ -291,6 +290,15 @@ function ST.InitAddonMenu()
 		setFunc = function(value)
 					ST.savedVariables.misc_wardenPortal = value
 					ST.synergies["/esoui/art/icons/ability_warden_005_b.dds"] = value
+				  end,
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
+		name = "|t35:35:/esoui/art/icons/ability_arcanist_016_b.dds|t Passage",
+		getFunc = function() return ST.savedVariables.dd_passage end,
+		setFunc = function(value)
+					ST.savedVariables.dd_passage = value
+					ST.synergies["/esoui/art/icons/ability_arcanist_016_b.dds"] = value
 				  end,
 	}
 	miscData[#miscData+1] = {

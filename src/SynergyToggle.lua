@@ -30,6 +30,7 @@ ST.SYNERGYBLACKLIST = {
 	["/esoui/art/icons/ability_undaunted_001_a.dds"] = true,
 	["/esoui/art/icons/ability_undaunted_001.dds"] = true,
 	["/esoui/art/icons/ability_u23_bloodball_chokeonit.dds"] = true,
+	["/esoui/art/icons/ability_arcanist_016_b.dds"] = true,
 }
 
 ST.RESOURCESYNERGIES = {
@@ -110,6 +111,7 @@ function ST.InitSavedVariables()
 		dd_harvest = false,
 		dd_grave = false,
 		dd_agony = false,
+		dd_passage = false,
 		dd_shards = false,
 		dd_ritual = false,
 		dd_ladythorn = false,
@@ -337,6 +339,7 @@ function ST.InitSynergies()
 	ST.synergies["/esoui/art/icons/ability_warden_007.dds"] = settings.dd_harvest
 	ST.synergies["/esoui/art/icons/ability_necromancer_004.dds"] = settings.dd_grave
 	ST.synergies["/esoui/art/icons/ability_necromancer_010_b.dds"] = settings.dd_agony
+	ST.synergies["/esoui/art/icons/ability_arcanist_016_b.dds"] = settings.dd_passage
 	ST.synergies["/esoui/art/icons/ability_templar_sun_strike.dds"] = settings.dd_shards
 	ST.synergies["/esoui/art/icons/ability_templar_cleansing_ritual.dds"] = settings.dd_ritual
 	ST.synergies["/esoui/art/icons/ability_u23_bloodball_chokeonit.dds"] = settings.dd_ladythorn

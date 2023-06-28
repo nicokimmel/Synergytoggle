@@ -3,6 +3,7 @@
 - Added Martial Knowledge mode
 - Added blocking of Pure Agony synergy
 - Added DSR Surging waters synergy dialog popup (aka vHRC HM)
+- Added blocking the Passage synergy from Arcanist portal
 -----------
 
 09.06.2022

@@ -25,6 +25,7 @@ Disables orbs and templar shards while having more than 30% stamina.
 - Prevent Destructive Outbreak (Adds a notification you have to accept to prevent unwanted explosions)
 - Prevent Surging Waters (Adds a notification you have to accept to prevent going up unwillingly)
 - Block Arena Sigils
+- Block Passage synergy (Arcanist portal)
 
 [*]Prevents synergy stealing
 - Options to disable Sorcerer Atros for tanks and healers
