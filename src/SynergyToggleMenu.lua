@@ -6,7 +6,7 @@ function ST.InitAddonMenu()
 		type = "panel",
 		name = "Synergy Toggle",
 		displayName = "Synergy Toggle",
-		author = "ownedbynico",
+		author = "ownedbynico, helixanon",
 		version = ST.version,
 		slashCommand = "/synergy",
 		registerForRefresh = true,
@@ -86,7 +86,6 @@ function ST.InitAddonMenu()
 		step = 100,
 		width = "half",
 	}
-	
 	optionData[#optionData+1] = {
 		type = "header",
 		name = "Damage Dealer",
@@ -292,12 +291,12 @@ function ST.InitAddonMenu()
 					ST.synergies["/esoui/art/icons/ability_warden_005_b.dds"] = value
 				  end,
 	}
-	optionData[#optionData+1] = {
+	miscData[#miscData+1] = {
 		type = "checkbox",
 		name = "|t35:35:/esoui/art/icons/ability_arcanist_016_b.dds|t Passage",
-		getFunc = function() return ST.savedVariables.dd_passage end,
+		getFunc = function() return ST.savedVariables.misc_passage end,
 		setFunc = function(value)
-					ST.savedVariables.dd_passage = value
+					ST.savedVariables.misc_passage = value
 					ST.synergies["/esoui/art/icons/ability_arcanist_016_b.dds"] = value
 				  end,
 	}
