@@ -6,7 +6,7 @@ function ST.InitAddonMenu()
 		type = "panel",
 		name = "Synergy Toggle",
 		displayName = "Synergy Toggle",
-		author = "ownedbynico",
+		author = "ownedbynico, helixanon",
 		version = ST.version,
 		slashCommand = "/synergy",
 		registerForRefresh = true,
@@ -86,7 +86,6 @@ function ST.InitAddonMenu()
 		step = 100,
 		width = "half",
 	}
-	
 	optionData[#optionData+1] = {
 		type = "header",
 		name = "Damage Dealer",
@@ -116,6 +115,15 @@ function ST.InitAddonMenu()
 		setFunc = function(value)
 					ST.savedVariables.dd_grave = value
 					ST.synergies["/esoui/art/icons/ability_necromancer_004.dds"] = value
+				  end,
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
+		name = "|t35:35:/esoui/art/icons/ability_necromancer_010_b.dds|t Agony",
+		getFunc = function() return ST.savedVariables.dd_agony end,
+		setFunc = function(value)
+					ST.savedVariables.dd_agony = value
+					ST.synergies["/esoui/art/icons/ability_necromancer_010_b.dds"] = value
 				  end,
 	}
 	optionData[#optionData+1] = {
@@ -168,6 +176,13 @@ function ST.InitAddonMenu()
 		getFunc = function() return ST.savedVariables.dd_kinrasMode end,
 		setFunc = function(value) ST.savedVariables.dd_kinrasMode = value end,
 		tooltip = "Disables the Sorcerer Atronach synergy while having the Major Berserk buff. Also works for Unchained Aggressor, Heem-Jas' Retribution and Sithis' Touch.",
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
+		name = "Martial Knowledge Mode",
+		getFunc = function() return ST.savedVariables.dd_martialknowledgemode end,
+		setFunc = function(value) ST.savedVariables.dd_martialknowledgemode = value end,
+		tooltip = "Disables orbs and templar shards while having more than 30% stamina.",
 	}
 	optionData[#optionData+1] = {
 		type = "checkbox",
@@ -274,6 +289,15 @@ function ST.InitAddonMenu()
 		setFunc = function(value)
 					ST.savedVariables.misc_wardenPortal = value
 					ST.synergies["/esoui/art/icons/ability_warden_005_b.dds"] = value
+				  end,
+	}
+	miscData[#miscData+1] = {
+		type = "checkbox",
+		name = "|t35:35:/esoui/art/icons/ability_arcanist_016_b.dds|t Passage",
+		getFunc = function() return ST.savedVariables.misc_passage end,
+		setFunc = function(value)
+					ST.savedVariables.misc_passage = value
+					ST.synergies["/esoui/art/icons/ability_arcanist_016_b.dds"] = value
 				  end,
 	}
 	miscData[#miscData+1] = {
