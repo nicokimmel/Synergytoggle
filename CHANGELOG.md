@@ -1,3 +1,7 @@
+07.10.2023
+- Tweaked Coral, Alkosh and MK modes conditions
+- Added blocking of Runebreak synergy
+-----------
 27.06.2023
 - New maintainer: helixanon
 - Added Martial Knowledge mode
