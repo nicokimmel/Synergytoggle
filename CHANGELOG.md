@@ -1,7 +1,9 @@
 07.10.2023
 - Tweaked Coral, Alkosh and MK modes conditions
 - Added blocking of Runebreak synergy
+- Storm Atronach synergy is also considered a blockable synergy for Alkosh due to the fact that it gives Major Berserk to the whole group
 -----------
+
 27.06.2023
 - New maintainer: helixanon
 - Added Martial Knowledge mode

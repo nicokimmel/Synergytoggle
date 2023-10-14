@@ -2,7 +2,7 @@ SynergyToggle = SynergyToggle or {}
 local ST = SynergyToggle
 
 ST.name = "SynergyToggle"
-ST.version = "1.11.0"
+ST.version = "1.12.0"
 
 ST.synergies = {}
 
@@ -13,6 +13,7 @@ ST.SYNERGYBLACKLIST = {
 	["/esoui/art/icons/ability_necromancer_010_b.dds"] = true,
 	["/esoui/art/icons/ability_necromancer_004.dds"] = true,
 	["/esoui/art/icons/ability_sorcerer_lightning_splash.dds"] = true,
+    ["/esoui/art/icons/ability_sorcerer_storm_atronach.dds"] = true,
 	["/esoui/art/icons/ability_warden_005_b.dds"] = true,
 	["/esoui/art/icons/ability_warden_007.dds"] = true,
 	["/esoui/art/icons/ability_templar_cleansing_ritual.dds"] = true,
@@ -31,7 +32,6 @@ ST.SYNERGYBLACKLIST = {
 	["/esoui/art/icons/ability_undaunted_001.dds"] = true,
 	["/esoui/art/icons/ability_u23_bloodball_chokeonit.dds"] = true,
 	["/esoui/art/icons/ability_arcanist_016_b.dds"] = true,
-    ["/esoui/art/icons/ability_sorcerer_storm_atronach.dds"] = true,
     ["/esoui/art/icons/ability_arcanist_004.dds"] = true
 }
 
@@ -454,7 +454,7 @@ function ST.BlockSynergies()
 				end
 			end
 			if not ST.HasLowStamina(20) then
-				if ST.savedVariables.tank_alkoshMode and ST.alkoshAvailable > 3 then
+				if ST.savedVariables.tank_alkoshMode and ST.alkoshAvailable >= 3 then
 					if ST.HasTargetAlkosh() or ST.alkoshAvailable < 5 then
 						if ST.SYNERGYBLACKLIST[icon] then
 							SHARED_INFORMATION_AREA:SetHidden(SYNERGY, true)
