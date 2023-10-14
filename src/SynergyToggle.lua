@@ -13,7 +13,7 @@ ST.SYNERGYBLACKLIST = {
 	["/esoui/art/icons/ability_necromancer_010_b.dds"] = true,
 	["/esoui/art/icons/ability_necromancer_004.dds"] = true,
 	["/esoui/art/icons/ability_sorcerer_lightning_splash.dds"] = true,
-    ["/esoui/art/icons/ability_sorcerer_storm_atronach.dds"] = true,
+	["/esoui/art/icons/ability_sorcerer_storm_atronach.dds"] = true,
 	["/esoui/art/icons/ability_warden_005_b.dds"] = true,
 	["/esoui/art/icons/ability_warden_007.dds"] = true,
 	["/esoui/art/icons/ability_templar_cleansing_ritual.dds"] = true,
@@ -32,7 +32,7 @@ ST.SYNERGYBLACKLIST = {
 	["/esoui/art/icons/ability_undaunted_001.dds"] = true,
 	["/esoui/art/icons/ability_u23_bloodball_chokeonit.dds"] = true,
 	["/esoui/art/icons/ability_arcanist_016_b.dds"] = true,
-    ["/esoui/art/icons/ability_arcanist_004.dds"] = true
+	["/esoui/art/icons/ability_arcanist_004.dds"] = true
 }
 
 ST.RESOURCESYNERGIES = {
