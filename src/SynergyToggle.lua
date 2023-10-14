@@ -2,7 +2,7 @@ SynergyToggle = SynergyToggle or {}
 local ST = SynergyToggle
 
 ST.name = "SynergyToggle"
-ST.version = "1.11.0"
+ST.version = "1.12.0"
 
 ST.synergies = {}
 
@@ -13,6 +13,7 @@ ST.SYNERGYBLACKLIST = {
 	["/esoui/art/icons/ability_necromancer_010_b.dds"] = true,
 	["/esoui/art/icons/ability_necromancer_004.dds"] = true,
 	["/esoui/art/icons/ability_sorcerer_lightning_splash.dds"] = true,
+	["/esoui/art/icons/ability_sorcerer_storm_atronach.dds"] = true,
 	["/esoui/art/icons/ability_warden_005_b.dds"] = true,
 	["/esoui/art/icons/ability_warden_007.dds"] = true,
 	["/esoui/art/icons/ability_templar_cleansing_ritual.dds"] = true,
@@ -31,6 +32,7 @@ ST.SYNERGYBLACKLIST = {
 	["/esoui/art/icons/ability_undaunted_001.dds"] = true,
 	["/esoui/art/icons/ability_u23_bloodball_chokeonit.dds"] = true,
 	["/esoui/art/icons/ability_arcanist_016_b.dds"] = true,
+	["/esoui/art/icons/ability_arcanist_004.dds"] = true
 }
 
 ST.RESOURCESYNERGIES = {
@@ -114,6 +116,7 @@ function ST.InitSavedVariables()
 		dd_shards = false,
 		dd_ritual = false,
 		dd_ladythorn = false,
+		dd_runebreak = false,
 		dd_bahseisMode = false,
 		dd_bahseisMode_magicka = 20,
 		dd_kinrasMode = false,
@@ -343,6 +346,7 @@ function ST.InitSynergies()
 	ST.synergies["/esoui/art/icons/ability_templar_sun_strike.dds"] = settings.dd_shards
 	ST.synergies["/esoui/art/icons/ability_templar_cleansing_ritual.dds"] = settings.dd_ritual
 	ST.synergies["/esoui/art/icons/ability_u23_bloodball_chokeonit.dds"] = settings.dd_ladythorn
+	ST.synergies["/esoui/art/icons/ability_arcanist_004.dds"] = settings.dd_runebreak
 	ST.synergies["/esoui/art/icons/ability_sorcerer_storm_atronach.dds"] = settings.tank_atronarch
 	ST.synergies["/esoui/art/icons/ability_nightblade_015.dds"] = settings.tank_nbshadowult
 	ST.synergies["/esoui/art/icons/collectible_memento_pearlsummon.dds"] = settings.healer_cloudrestPortalEntirely
@@ -433,7 +437,7 @@ function ST.BlockSynergies()
 			end
 			if not ST.HasLowStamina(ST.savedVariables.dd_coralriptideMode_stamina)
 				and ST.savedVariables.dd_coralriptideMode
-				and ST.coralriptideAvailable >= 5 then
+				and ST.coralriptideAvailable >= 3 then
 				
 				if ST.RESOURCESYNERGIES[icon] then
 					SHARED_INFORMATION_AREA:SetHidden(SYNERGY, true)
@@ -442,7 +446,7 @@ function ST.BlockSynergies()
 			end
 			if not ST.HasLowStamina(30)
 				and ST.savedVariables.dd_martialknowledgemode
-				and ST.mkavailable >= 5 then
+				and ST.mkavailable >= 3 then
 				
 				if ST.RESOURCESYNERGIES[icon] then
 					SHARED_INFORMATION_AREA:SetHidden(SYNERGY, true)
@@ -450,7 +454,7 @@ function ST.BlockSynergies()
 				end
 			end
 			if not ST.HasLowStamina(20) then
-				if ST.savedVariables.tank_alkoshMode and ST.alkoshAvailable > 0 then
+				if ST.savedVariables.tank_alkoshMode and ST.alkoshAvailable >= 3 then
 					if ST.HasTargetAlkosh() or ST.alkoshAvailable < 5 then
 						if ST.SYNERGYBLACKLIST[icon] then
 							SHARED_INFORMATION_AREA:SetHidden(SYNERGY, true)

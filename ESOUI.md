@@ -12,6 +12,8 @@ Disables orbs and templar shards while having more than 30% stamina.
 [SIZE="3"]Pure Agony synergy block[/SIZE]
 
 [SIZE="3"]DSR Surging waters synergy popup window (aka vHRC HM)[/SIZE]
+
+[SIZE="3"]Blocking Passage (Arcanist portal) and Runebreak synergies[/SIZE]
 [/COLOR]
 
 
@@ -25,11 +27,11 @@ Disables orbs and templar shards while having more than 30% stamina.
 - Prevent Destructive Outbreak (Adds a notification you have to accept to prevent unwanted explosions)
 - Prevent Surging Waters (Adds a notification you have to accept to prevent going up unwillingly)
 - Block Arena Sigils
-- Block Passage synergy (Arcanist portal)
 
 [*]Prevents synergy stealing
 - Options to disable Sorcerer Atros for tanks and healers
-- DDs can disable Conduit, Harvest, Grave, Shards, Lady Thorn, and Pure Agony
+- DDs can disable Conduit, Harvest, Grave, Shards, Lady Thorn, Pure Agony, and Runebreak
+- Block Passage synergy (Arcanist portal)
 
 [*]Blob Mode
 - Blocks the "Purge Soul" synergy for 2s and notifies you to move outside the group

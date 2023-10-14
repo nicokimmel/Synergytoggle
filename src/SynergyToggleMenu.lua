@@ -158,6 +158,16 @@ function ST.InitAddonMenu()
 	}
 	optionData[#optionData+1] = {
 		type = "checkbox",
+		name = "|t35:35:/esoui/art/icons/ability_arcanist_004.dds|t Runebreak",
+		getFunc = function() return ST.savedVariables.dd_runebreak end,
+		setFunc = function(value)
+					ST.savedVariables.dd_runebreak = value
+					ST.synergies["/esoui/art/icons/ability_arcanist_004.dds"] = value
+				  end,
+		tooltip = "Blocks the Runebreak synergy.",
+	}
+	optionData[#optionData+1] = {
+		type = "checkbox",
 		name = "Lokkestiiz Mode",
 		getFunc = function() return ST.savedVariables.dd_lokkestiizMode end,
 		setFunc = function(value) ST.savedVariables.dd_lokkestiizMode = value end,
